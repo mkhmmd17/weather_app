@@ -5,17 +5,17 @@ class HomeScreenViewModel: ObservableObject {
     
     let networkManager = NetworkManager()
     
-    @Published var weatherData: [WeatherForecast] = []
+    @Published var weatherData: [Forecast] = []
     @Published var days: Int = 0
     @Published var city: String = ""
     
     
-    init() {
-        networkManager.fetchWeatherForecast(forDays: 20, location: "Chicago") { [unowned self] result in
+    func getWeather() {
+        networkManager.fetchWeatherForecast(forDays: days, location: city) { [unowned self] result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
-                    self.weatherData = [data]
+                    self.weatherData = data.forecast
                     print(self.weatherData)
                 }
             case .failure(let error):

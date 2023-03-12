@@ -1,10 +1,29 @@
 import Foundation
 
 //MARK: - WeatherForecast
-struct WeatherForecast: Codable, Identifiable {
+import Foundation
+
+// MARK: - Weather
+struct WeatherForecast: Codable {
     
-    let id = UUID().uuidString
     let location: String
-    let region: String
-    let country: String
+    let forecast: [Forecast]
+
+    enum CodingKeys: String, CodingKey {
+        case location
+        case forecast
+    }
+}
+
+// MARK: - Forecast
+struct Forecast: Codable, Identifiable {
+    let id = UUID().uuidString
+    let date: String
+    let maxTempC, minTempC: Double
+
+    enum CodingKeys: String, CodingKey {
+        case date
+        case maxTempC = "max_temp_c"
+        case minTempC = "min_temp_c"
+    }
 }

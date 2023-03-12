@@ -9,13 +9,12 @@ import SwiftUI
 
 struct WeatherRowView: View {
     
-    let weather: WeatherForecast
+    let forecast: Forecast
     
     var body: some View {
         HStack() {
-            Text(weather.location)
-            Text(weather.region)
-            Text(weather.country)
+            Text(forecast.date)
+            Text(forecast.date)
         }
         .font(.headline)
     }
@@ -24,6 +23,6 @@ struct WeatherRowView: View {
 struct WeatherRowView_Previews: PreviewProvider {
     
     static var previews: some View {
-        WeatherRowView(weather: WeatherForecast(location: "Chicago", region: "Downtown", country: "US"))
+        WeatherRowView(forecast: Forecast(date: "12.19.2000", maxTempC: 12.1, minTempC: 10.1))
     }
 }

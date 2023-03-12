@@ -13,8 +13,8 @@ struct WeatherView: View {
     
     var body: some View {
         List {
-            ForEach(VM.weatherData) { weatherData in
-                WeatherRowView(weather: weatherData)
+            ForEach(VM.weatherData, id: \.id) { weatherData in
+                WeatherRowView(forecast: weatherData)
             }
         }
     }
@@ -23,5 +23,6 @@ struct WeatherView: View {
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherView()
+//            .environmentObject(HomeScreenViewModel())
     }
 }

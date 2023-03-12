@@ -27,10 +27,12 @@ struct ContentView: View {
             
             Button("Display Weather") {
                 showingSheet.toggle()
+                
+                
             }.sheet(isPresented: $showingSheet) {
                 WeatherView()
             }
-        
+            
         }
         .padding()
     }
