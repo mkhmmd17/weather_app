@@ -8,24 +8,21 @@ class HomeScreenViewModel: ObservableObject {
     @Published var weatherData: [Forecast] = []
     @Published var days: Int = 0
     @Published var city: String = ""
+    @Published var isLoading: Bool = false
     
-    
-    func getWeather() {
+    func getWeatherData() {
+        isLoading = true
         networkManager.fetchWeatherForecast(forDays: days, location: city) { [unowned self] result in
-            switch result {
-            case .success(let data):
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
                     self.weatherData = data.forecast
+                    self.isLoading = false
                     print(self.weatherData)
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }
-    
-//    func getWeatherArray() {
-//        
-//        
-//    }
 }

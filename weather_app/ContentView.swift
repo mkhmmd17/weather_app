@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var VM = HomeScreenViewModel()
+    @EnvironmentObject var VM: HomeScreenViewModel
     
-    @State private var showingSheet = false
-    
+    @State private var showingSheet: Bool = false
     
     var body: some View {
         VStack {
@@ -26,9 +25,8 @@ struct ContentView: View {
                 .keyboardType(.numberPad)
             
             Button("Display Weather") {
+                VM.getWeatherData()
                 showingSheet.toggle()
-                
-                
             }.sheet(isPresented: $showingSheet) {
                 WeatherView()
             }

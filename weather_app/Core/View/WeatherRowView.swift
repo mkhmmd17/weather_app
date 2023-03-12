@@ -14,7 +14,8 @@ struct WeatherRowView: View {
     var body: some View {
         HStack() {
             Text(forecast.date)
-            Text(forecast.date)
+            Text("\(forecast.maxTempC)")
+            Text("\(forecast.minTempC)")
         }
         .font(.headline)
     }
