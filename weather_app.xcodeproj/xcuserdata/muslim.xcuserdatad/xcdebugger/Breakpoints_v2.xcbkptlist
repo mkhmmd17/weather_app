@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D9CE1CCB-B14C-4FB5-AD38-A03E424EB4E3"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B4363BB-C6FB-4217-8547-E4A6A59F4A0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weather_app/Core/View/WeatherView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3B4363BB-C6FB-4217-8547-E4A6A59F4A0D - 8c43cfe2bdc0173a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;weather_app.WeatherForecast&gt;, Swift.String, weather_app.WeatherRowView&gt; in weather_app.WeatherView.body.getter : some"
+                  moduleName = "weather_app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muslim/Desktop/Mokhammad/weather_app/weather_app/Core/View/WeatherView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "3B4363BB-C6FB-4217-8547-E4A6A59F4A0D - 5c150f5545d75c1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (weather_app.WeatherForecast) -&gt; weather_app.WeatherRowView in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;weather_app.WeatherForecast&gt;, Swift.String, weather_app.WeatherRowView&gt; in weather_app.WeatherView.body.getter : some"
+                  moduleName = "weather_app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muslim/Desktop/Mokhammad/weather_app/weather_app/Core/View/WeatherView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
