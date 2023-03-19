@@ -11,17 +11,16 @@ class HomeScreenViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     
     func getWeatherData() {
-        isLoading = true
-        networkManager.fetchWeatherForecast(forDays: days, location: city) { [unowned self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let data):
-                    self.weatherData = data.forecast
-                    self.isLoading = false
-                    print(self.weatherData)
-                case .failure(let error):
-                    print(error.localizedDescription)
+        async {
+            isLoading = true
+            do {
+                let forecast = try await networkManager.getWeatherForecast(for: city, days: days)
+                Task { @MainActor in
+                    self.weatherData = forecast.forecast
+                    isLoading = false
                 }
+            } catch {
+                print(error)
             }
         }
     }
